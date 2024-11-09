@@ -1,0 +1,34 @@
+
+#include <iostream>
+#include <string>
+using namespace std; 
+enum enNumbertybe { odd = 1, even = 2 }; 
+int readnumber()
+{
+	int num;
+	cout << "Please enter a number ? " << endl; 
+	cin >> num ;
+	return num ; 
+}
+enNumbertybe CheckNumbertybe(int num)
+{
+	int result = num % 2; 
+	if (result == 0)
+		return  enNumbertybe::even;
+	else
+		return  enNumbertybe::odd; 
+}
+void printnumbertybe(enNumbertybe Nunbertype)
+{
+	if (Nunbertype == enNumbertybe::even)
+		cout << "\n number is Even . \n";
+	else
+		cout << " \n number is odd . \n "; 
+}
+
+
+int main()
+{
+	printnumbertybe(CheckNumbertybe(readnumber()));
+	return 0;
+}
